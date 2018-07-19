@@ -1,0 +1,27 @@
+General goal:
+
+
+
+Backend API
+  - videos
+
+Database
+  - knex
+  - postgres
+  - seeds
+  
+Koa
+  koa
+  koa-router
+
+TypeScript
+  tslint
+  tslint standard
+
+tslint.json
+tsconfig.json
+
+nodemon
+ts-node
+typescript
+

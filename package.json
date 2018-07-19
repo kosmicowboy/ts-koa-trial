@@ -1,0 +1,38 @@
+{
+  "name": "ts-koa-trial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "watch-server": "nodemon --watch 'src/**/*' -e ts, tsx --exec 'ts-node' ./src/server.ts"
+  },
+  "author": "Interactive Challenges Team",
+  "contributors": [
+    "Kyle Gray <kyle-gray@pluralsight.com> (http://github.com/kylegraydev)",
+    "Linsy Joyner <linsy-joyner@pluralsight.com> (https://github.com/linsydeanna/)",
+    "AJ Foster <aj-foster@pluralsight.com> (https://github.com/aj-foster/)",
+    "Charlene Estiva <charlene-estiva@pluralsight.com> (https://github.com/cbestiva/)"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/knex": "^0.14.16",
+    "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.30",
+    "@types/pg": "^7.4.10",
+    "nodemon": "^1.18.3",
+    "ts-node": "^7.0.0",
+    "ts-node-dev": "^1.0.0-pre.26",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "knex": "^0.15.2",
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "pg": "^7.4.3"
+  }
+}
