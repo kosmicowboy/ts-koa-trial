@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "tsc --watch",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts, tsx --exec 'ts-node' ./src/server.ts"
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
   },
   "author": "Interactive Challenges Team",
   "contributors": [
