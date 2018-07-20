@@ -3,25 +3,16 @@ import * as Router from 'koa-router'
 import db = require('./db/connections')
 import * as video from './video'
 
-const app = new Koa()
 const PORT = 3000
 
-// app.use(ctx => {
-//   ctx.body = {
-//     status: 'success',
-//     message: 'Hello, world!'
-//   }
-// })~
-
+const app = new Koa()
 const router = new Router()
 
 app.use(router.routes())
 
-router.get('/', ctx => {
-  ctx.body = {
-    status: 'success',
-    message: 'testing'
-  }
+router.get('/videos', async ctx => {
+  const videos = await video.getVideos(db)
+  ctx.body = videos
 })
 
 const server = app.listen(PORT, () => {
