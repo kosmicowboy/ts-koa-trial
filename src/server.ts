@@ -18,6 +18,16 @@ router.get('/videos', async ctx => {
   ctx.body = videos
 })
 
+router.post('/videos', async ctx => {
+  const newVideo = video.newVideo(ctx.request.body)
+  const insertionResponse = await video.insertVideo(db, newVideo)
+
+  ctx.body = {
+    message: 'Video created',
+    video: insertionResponse
+  }
+})
+
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`)
 })

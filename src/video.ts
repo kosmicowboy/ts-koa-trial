@@ -10,5 +10,13 @@ export const getVideo = (db: knex, id: number) => {
 }
 
 export const insertVideo = (db: knex, video: Video) => {
-  return db.insert(video).into('videos')
+  return db.insert(video).into('videos').returning('*')
+}
+
+export const newVideo = (obj: { guid?: string }) => {
+  let newVideo: Video = { guid: '' }
+
+  if (obj.guid) newVideo.guid = obj.guid
+
+  return newVideo
 }
