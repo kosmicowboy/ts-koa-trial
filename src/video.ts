@@ -1,9 +1,5 @@
 import * as knex from 'knex'
-
-export interface Video {
-  id?: number,
-  guid: string
-}
+import { Video } from './models'
 
 export const getVideos = (db: knex) => {
   return db.select('*').from('videos')

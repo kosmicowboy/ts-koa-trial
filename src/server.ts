@@ -3,6 +3,7 @@ import * as Router from 'koa-router'
 import * as bodyParser from 'koa-bodyparser'
 import db = require('./db/connections')
 import * as video from './video'
+import { Video } from './models'
 
 const PORT = 3000
 
