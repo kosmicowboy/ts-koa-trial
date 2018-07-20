@@ -1,5 +1,6 @@
 import * as Koa from 'koa'
 import * as Router from 'koa-router'
+import db = require('./db/connections')
 
 const app = new Koa()
 const PORT = 3000
