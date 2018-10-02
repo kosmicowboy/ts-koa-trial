@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "tsc --watch",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts, tsx --exec 'ts-node' ./src/server.ts"
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
   },
   "author": "Interactive Challenges Team",
   "contributors": [
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/knex": "^0.14.16",
     "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.1",
     "@types/koa-router": "^7.0.30",
     "@types/pg": "^7.4.10",
     "nodemon": "^1.18.3",
@@ -32,6 +33,7 @@
   "dependencies": {
     "knex": "^0.15.2",
     "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "pg": "^7.4.3"
   }

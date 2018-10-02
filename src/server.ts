@@ -1,24 +1,30 @@
 import * as Koa from 'koa'
 import * as Router from 'koa-router'
+import * as bodyParser from 'koa-bodyparser'
+import db = require('./db/connections')
+import * as video from './video'
+import { Video } from './models'
 
-const app = new Koa()
 const PORT = 3000
 
-// app.use(ctx => {
-//   ctx.body = {
-//     status: 'success',
-//     message: 'Hello, world!'
-//   }
-// })~
-
+const app = new Koa()
 const router = new Router()
 
+app.use(bodyParser()) // Must be before router.routes()
 app.use(router.routes())
 
-router.get('/', ctx => {
+router.get('/videos', async ctx => {
+  const videos = await video.getVideos(db)
+  ctx.body = videos
+})
+
+router.post('/videos', async ctx => {
+  const newVideo = video.newVideo(ctx.request.body)
+  const insertionResponse = await video.insertVideo(db, newVideo)
+
   ctx.body = {
-    status: 'success',
-    message: 'testing'
+    message: 'Video created',
+    video: insertionResponse
   }
 })
 
